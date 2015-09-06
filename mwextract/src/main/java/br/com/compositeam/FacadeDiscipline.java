@@ -1,6 +1,8 @@
 package br.com.compositeam;
 import java.util.logging.Logger;
 
+import br.com.compositeam.dao.DisciplineDAO;
+import br.com.compositeam.dao.DisciplineDAOImpl;
 import br.com.compositeam.model.Discipline;
 
 
@@ -9,7 +11,12 @@ public class FacadeDiscipline {
 	private final static Logger LOG = Logger.getLogger(FacadeDiscipline.class.getName());
 	
 	private Discipline discipline;
+	private DisciplineDAO dao;
 	
+	public FacadeDiscipline(){
+		DisciplineDAOImpl daoImpl = new DisciplineDAOImpl();
+		dao = daoImpl.get();
+	}
 	public Discipline getDiscipline(){
 		Discipline d = new Discipline(" ","");
 		return d;
@@ -29,6 +36,18 @@ public class FacadeDiscipline {
 			d = new Discipline(" ", " ");
 		}
 		return d;
+	}
+	
+	public void save(){
+		if(discipline != null){
+			dao.save(discipline);
+		}
+	}
+	
+	public void save(Discipline discipline){
+		if(discipline != null){
+			dao.save(discipline);
+		}
 	}
 
 }
