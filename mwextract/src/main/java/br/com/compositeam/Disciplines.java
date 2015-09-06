@@ -19,9 +19,13 @@ public class Disciplines {
 		Document doc;
 		try {
 			doc = Jsoup.connect(url).validateTLSCertificates(false).get();
-			Element form = doc.getElementById("FormPesquisa");
-			Element table = form.after("table");
-			System.out.println(table);
+			Elements center = doc.getElementsByTag("center");
+			Elements table = center.select("table.FrameCinza");
+			Elements trs = table.select("tr");
+			for(int i = 1; i < trs.size(); i++){
+				System.out.println(getDiscipline(trs.get(i)));
+			}
+//			System.out.println(trs.get(0));
 //			Elements tables = doc.getElementsByTag("table");
 //			for(Element element : tables){
 //				System.out.println(element.html());
@@ -32,6 +36,13 @@ public class Disciplines {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private String getDiscipline(Element tr){
+		String discipline = "";
+		Element tdCodigo = tr.after("td");
+		discipline += tdCodigo.text();
+		return discipline;
 	}
 
 }
