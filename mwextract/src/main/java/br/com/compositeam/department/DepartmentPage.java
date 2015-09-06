@@ -9,8 +9,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import br.com.compositeam.Discipline;
 import br.com.compositeam.FacadeDiscipline;
+import br.com.compositeam.model.Discipline;
 
 public class DepartmentPage {
 	

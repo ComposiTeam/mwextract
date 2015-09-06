@@ -1,7 +1,7 @@
 package br.com.compositeam;
 import java.util.logging.Logger;
 
-import br.com.compositeam.Discipline;
+import br.com.compositeam.model.Discipline;
 
 
 public class FacadeDiscipline {
