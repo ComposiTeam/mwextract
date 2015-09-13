@@ -1,9 +1,9 @@
 package br.com.compositeam;
 import java.util.logging.Logger;
 
-import br.com.compositeam.dao.DisciplineDAO;
-import br.com.compositeam.dao.DisciplineDAOImpl;
-import br.com.compositeam.model.Discipline;
+import br.com.compositeam.businessmodel.dao.DisciplineDAO;
+import br.com.compositeam.businessmodel.dao.DisciplineDAOImpl;
+import br.com.compositeam.businessmodel.model.Discipline;
 
 
 public class FacadeDiscipline {

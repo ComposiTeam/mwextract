@@ -10,7 +10,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import br.com.compositeam.FacadeDiscipline;
-import br.com.compositeam.model.Discipline;
+import br.com.compositeam.businessmodel.model.Discipline;
 
 public class DepartmentPage {
 	

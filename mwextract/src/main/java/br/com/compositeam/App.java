@@ -3,7 +3,7 @@ package br.com.compositeam;
 import java.util.List;
 
 import br.com.compositeam.department.DepartmentPage;
-import br.com.compositeam.model.Discipline;
+import br.com.compositeam.businessmodel.model.Discipline;
 
 /**
  * Hello world!
