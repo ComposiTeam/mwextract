@@ -9,7 +9,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import br.com.compositeam.FacadeDiscipline;
 import br.com.compositeam.businessmodel.model.Discipline;
 
 public class DepartmentPage {
@@ -18,8 +17,18 @@ public class DepartmentPage {
 	
 	private String cod;
 	
-	public DepartmentPage(String cod){
+	private SaveDiscipline saveDiscipline;
+	
+	public DepartmentPage(String cod,SaveDiscipline saveDiscipline){
 		setCod(cod);
+		setSaveDiscipline(saveDiscipline);
+	}
+	
+	private void setSaveDiscipline(SaveDiscipline saveDiscipline){
+		if(saveDiscipline == null){
+			throw new NullPointerException("Save disiciple cannot be Null");
+		}
+		this.saveDiscipline = saveDiscipline;
 	}
 	
 	public void setCod(String cod){
@@ -53,17 +62,14 @@ public class DepartmentPage {
 		
 		return doc;
 	}
-	public List getDisciplines(){
-		ArrayList disciplines = new ArrayList();
+	public void getDisciplines(){
 		Document doc = getDocument();
 		Elements lines = linesOfTable(doc);
 		for(int i = 1; i < lines.size(); i++){
-			
 			String disciplineText = getDiscipline(lines.get(i));
-			disciplines.add(FacadeDiscipline.getDiscipline(disciplineText));
+			saveDiscipline.save(disciplineText);
 		}
 		
-		return disciplines;
 	}
 	
 	private String getDiscipline(Element tr){
