@@ -9,14 +9,14 @@ public class CampusPageTest {
 	@Test
 	public void lines(){
 		CampusPage campus = new CampusPage();
-		campus.getData();
+		campus.extractData();
 		campus.printData();
 	}
 	
 	@Test
 	public void output(){
 		CampusPage campus = new CampusPage(new CampusStorageFile());
-		campus.getData();
+		campus.extractData();
 		campus.save();
 	}
 

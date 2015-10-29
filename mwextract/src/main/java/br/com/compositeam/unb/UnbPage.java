@@ -16,7 +16,11 @@ public class UnbPage {
 		setUrl(url);
 	}
 	
-	private void setUrl(String url){
+	protected UnbPage(){
+		
+	}
+	
+	protected void setUrl(String url){
 		if(url == null){
 			throw new NullPointerException();
 		}
@@ -40,7 +44,7 @@ public class UnbPage {
 		return table;
 	}
 	
-	private Document getDocument(){
+	protected Document getDocument(){
 		Document doc = null;
 		try {
 			doc = Jsoup.connect(getUrl()).validateTLSCertificates(false).get();

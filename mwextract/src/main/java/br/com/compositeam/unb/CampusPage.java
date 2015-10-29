@@ -23,7 +23,7 @@ public class CampusPage extends UnbPage {
 		this(null);
 	}
 	
-	public void getData(){
+	public void extractData(){
 		Elements table = getTableMiddle();
 		Elements lines = table.select("tr");
 		for(int i = 1; i < lines.size(); i++){
@@ -41,6 +41,9 @@ public class CampusPage extends UnbPage {
 		}
 	}
 	
+	public Map<String, String> getData(){
+		return this.data;
+	}
 	
 	
 	private String getCodeFromLink(String link){
