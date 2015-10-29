@@ -55,6 +55,10 @@ public class UnbPage {
 		return doc;
 	}
 	
+	public  void save(){
+		
+	}
+	
 	
 
 }

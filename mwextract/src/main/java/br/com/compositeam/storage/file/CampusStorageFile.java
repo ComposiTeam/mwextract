@@ -10,7 +10,6 @@ public class CampusStorageFile extends OutputFile  implements CampusStorage{
 		super("campus.txt");
 	}
 	public void saveCampus(Map<String, String> data) {
-		// TODO Auto-generated method stub
 		for(String key: data.keySet()){
 			write(key + " " + data.get(key));
 		}
