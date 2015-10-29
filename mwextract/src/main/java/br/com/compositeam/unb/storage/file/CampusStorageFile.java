@@ -1,8 +1,8 @@
-package br.com.compositeam.storage.file;
+package br.com.compositeam.unb.storage.file;
 
 import java.util.Map;
 
-import br.com.compositeam.storage.CampusStorage;
+import br.com.compositeam.unb.storage.CampusStorage;
 
 public class CampusStorageFile extends OutputFile  implements CampusStorage{
 

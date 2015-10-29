@@ -2,7 +2,7 @@ package br.com.compositeam.unb;
 
 import org.junit.Test;
 
-import br.com.compositeam.storage.file.CampusStorageFile;
+import br.com.compositeam.unb.storage.file.CampusStorageFile;
 
 public class CampusPageTest {
 	

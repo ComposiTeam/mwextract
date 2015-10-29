@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import br.com.compositeam.storage.CampusStorage;
+import br.com.compositeam.unb.storage.CampusStorage;
 
 public class DepartamentPageTest {
 	

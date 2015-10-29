@@ -1,4 +1,4 @@
-package br.com.compositeam.storage;
+package br.com.compositeam.unb.storage;
 
 import java.util.Map;
 

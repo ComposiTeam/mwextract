@@ -1,8 +1,8 @@
-package br.com.compositeam.storage.file;
+package br.com.compositeam.unb.storage.file;
 
 import java.util.Map;
 
-import br.com.compositeam.storage.DisciplineStorage;
+import br.com.compositeam.unb.storage.DisciplineStorage;
 
 public class DisciplineStorageFile extends OutputFile implements DisciplineStorage {
 

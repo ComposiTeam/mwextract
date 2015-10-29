@@ -8,8 +8,8 @@ import java.util.Set;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import br.com.compositeam.storage.DisciplineStorage;
-import br.com.compositeam.storage.file.DisciplineStorageFile;
+import br.com.compositeam.unb.storage.DisciplineStorage;
+import br.com.compositeam.unb.storage.file.DisciplineStorageFile;
 
 public class DisciplinePage extends UnbPage {
 

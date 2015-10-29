@@ -6,7 +6,7 @@ import java.util.Map;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import br.com.compositeam.storage.CampusStorage;
+import br.com.compositeam.unb.storage.CampusStorage;
 
 public class CampusPage extends UnbPage {
 
