@@ -4,5 +4,5 @@ import java.util.Map;
 
 public interface TranscriptStorage {
 	
-	public void save(Map<String, String> data);
+	public void storage(Map<String, String> data);
 }

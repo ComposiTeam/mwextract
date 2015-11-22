@@ -76,41 +76,41 @@ public class TranscriptPage {
 	
 	public void extractData(){
 		this.get();
-		Elements table = document.select("table").eq(1);
-		Elements trs = table.select("tr");
-		String semester = "";
-		System.out.println(" Periodos -------------------------------------------------------------");
-		for(int i = 3; i< trs.size(); i++){
-			Element tr = trs.get(i);
-			Elements tds = tr.select("td");
-			int size = Math.min(tds.size(), 3);
-			for(int j = 0; j < size; j++){
-				Element td = tds.get(j);
-				if(td.hasAttr("colspan")){
-					String colspan = td.attr("colspan");
-					if(Integer.parseInt(colspan) == 9){
-						semester = getPeriod(td.text());
-						data.put(semester, "");
-						System.out.println(semester);
-					}
-				}else{
-					if(data.get(semester).length() == 0){
-						data.put(semester, td.text());
+		if(document != null){
+			Elements table = document.select("table").eq(1);
+			Elements trs = table.select("tr");
+			String semester = "";
+			System.out.println(" Periodos -------------------------------------------------------------");
+			for(int i = 3; i< trs.size(); i++){
+				Element tr = trs.get(i);
+				Elements tds = tr.select("td");
+				int size = Math.min(tds.size(), 3);
+				for(int j = 0; j < size; j++){
+					Element td = tds.get(j);
+					if(td.hasAttr("colspan")){
+						String colspan = td.attr("colspan");
+						if(Integer.parseInt(colspan) == 9){
+							semester = getPeriod(td.text());
+							data.put(semester, "");
+							System.out.println(semester);
+						}
 					}else{
-						data.put(semester, data.get(semester) + "," + td.text());
+						if(data.get(semester).length() == 0){
+							data.put(semester, td.text());
+						}else{
+							data.put(semester, data.get(semester) + "," + td.text());
+						}
 					}
+					
 				}
 				
 			}
-			
 		}
-		for(String key : data.keySet()){
-			System.out.println("key " + key + "Value" + data.get(key));
-		}
+		
 	}
 	
 	public void save(){
-		this.storage.save(data);
+		this.storage.storage(data);
 	}
 	
 	private String getPeriod(String text){

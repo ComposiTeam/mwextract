@@ -11,7 +11,7 @@ public class TranscriptStorageFile extends OutputFile implements TranscriptStora
 		// TODO Auto-generated constructor stub
 	}
 
-	public void save(Map<String, String> data) {
+	public void storage(Map<String, String> data) {
 		// TODO Auto-generated method stub
 		for(String key : data.keySet()){
 			write(key + " " + data.get(key));
