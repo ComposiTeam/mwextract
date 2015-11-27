@@ -79,45 +79,13 @@ public class CoursePage extends UnbPage {
 				}
 			}
 		}
-		for(String cl : data.keySet()){
-			System.out.println(cl + " " + data.get(cl));
-		}
+//		for(String cl : data.keySet()){
+//			System.out.println(cl + " " + data.get(cl));
+//		}
 	}
 	
 	public void save(){
 		storage.save(data);
-	}
-	
-	public void extractData2(){
-		Document doc = getDocument();
-		//Get table withe times
-		Elements table = doc.select("table").eq(7);
-		Elements columns = table.select("tr");
-//		System.out.println(columns.html());
-		int ary[] = {3,11,16};
-		for(int j = 0; j < ary.length; j++){
-//		System.out.println("j " + j);
-		Elements tds = columns.get(ary[j]).select("td");
-//		System.out.println(tds.html());
-			for(int i = 0; i < tds.size(); i++){
-				Element td = tds.get(i);
-				System.out.println("I:" + i + td.html());
-				if(i == 0){
-					System.out.println("Name of class " + getNameClass(td));
-				}
-				if(i == 1){
-					System.out.println("Numeber of Vagas " + getNumberOfVagas(td));
-					System.out.println("Ocupadas " + getNumberOfVagasOcupadas(td));
-					System.out.println("Restantes " + getNumberOfVagasRestantes(td));
-				}
-				if(i == 11){
-					getHorarios(td);
-				}
-				if(i == 27){
-					System.out.println("Professor: " + getProfessor(td));
-				}
-			}
-		}
 	}
 	
 	private String getProfessor(Element html) {

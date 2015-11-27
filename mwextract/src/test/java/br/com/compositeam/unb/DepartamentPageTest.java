@@ -12,6 +12,8 @@ public class DepartamentPageTest {
 	public void getAll(){
 		DepartamentPage depart = new DepartamentPage("4");
 		depart.getData();
+		depart.save();
+		
 	}
 
 }

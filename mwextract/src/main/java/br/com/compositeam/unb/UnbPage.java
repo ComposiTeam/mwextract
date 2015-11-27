@@ -46,12 +46,14 @@ public class UnbPage {
 	
 	protected Document getDocument(){
 		Document doc = null;
-		try {
-			doc = Jsoup.connect(getUrl()).validateTLSCertificates(false).get();
-		}catch(IOException e){
-			e.printStackTrace();
+		for(int i = 0; i < 10; i++){
+			try {
+				doc = Jsoup.connect(getUrl()).validateTLSCertificates(false).get();
+				return doc;
+			}catch(IOException e){
+				e.printStackTrace();
+			}
 		}
-		
 		return doc;
 	}
 	
